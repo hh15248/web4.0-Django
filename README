@@ -14,11 +14,9 @@ DEPENDENCIES (virtual environment recommended):
         https://docs.djangoproject.com/en/4.0/topics/install/
 
 
-VIRTUAL ENVIRONMENT HELP:
+MAKE A VIRTUAL ENVIRONMENT:
     Terminal:
-        virtualenv newenv
-        cd newenv
-        source bin/activate
+        python -m venv path/to/new/virtual/environment
     Help:
         https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
 
