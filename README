@@ -50,17 +50,28 @@ OUR TUTORIAL:
     Add "admin/" to the base url and login to easily view the database info
     http://127.0.0.1:8000/admin/
 
-4. Add the best_school field to bevo's contact model and form
-    Uncomment lines in the contact direcotry in forms.py and models.py
+4. Fill out the contact form
+    In the webapp, click on the hyperlink in the nav bar to go to the contact page.
+    
+    Fill out the contact form for bevo.
+
+    Change over to the admin page to view your friend request 
+    http://127.0.0.1:8000/admin/
+
+   
+5. Add the best_school selection to the contact form
+    Quit the webapp in the terminal (Ctrl+C) and locate the contact directory in your IDE
+
+    Uncomment the lines in the contact direcotry in forms.py and models.py to add the best_school feature to the poll
 
     Change the database in the terminal:
         python manage.py makemigrations contact
         python manage.py migrate
     
-    Rerun to view new changes in terminal:
+    Rerun the following in the terminal and go to the contact page to view changes:
         python manage.py runserver
 
-5. Edit bevo's about page HTML file in templates
+6. Edit bevo's about page HTML file in templates
     While the website is still up (no Ctrl+C !), navigate to the about.html file
 
     Add necessary info like "I am orange and like to play in fields" to
