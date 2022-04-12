@@ -51,18 +51,21 @@ OUR TUTORIAL:
     http://127.0.0.1:8000/admin/
 
 4. Fill out the contact form
-    In the webapp, click on the hyperlink in the nav bar to go to the contact page.
-    
-    Fill out the contact form for bevo.
+    Exit out of the admin page by changing the url to the original by deleting "admin/"
+    http://127.0.0.1:8000/
 
-    Change over to the admin page to view your friend request 
+    Use the hyperlinked navbar to go to the "Contact" page
+    
+    Fill out the contact form for bevo if you want to be friends.
+
+    Change over to the admin page and click on "Friends" to view your friend request 
     http://127.0.0.1:8000/admin/
 
    
 5. Add the best_school selection to the contact form
-    Quit the webapp in the terminal (Ctrl+C) and locate the contact directory in your IDE
+    Quit the webapp in the terminal (Ctrl+C) and locate the contact directory
 
-    Uncomment the lines in the contact direcotry in forms.py and models.py to add the best_school feature to the poll
+    Uncomment the lines in the contact/forms.py and contact/models.py to add the best_school feature to the poll
 
     Change the database in the terminal:
         python manage.py makemigrations contact
@@ -72,15 +75,22 @@ OUR TUTORIAL:
         python manage.py runserver
 
 6. Edit bevo's about page HTML file in templates
-    While the website is still up (no Ctrl+C !), navigate to the about.html file
+    Go to the about page to see more info about bevo
+        http://127.0.0.1:8000/about/
 
-    Add necessary info like "I am orange and like to play in fields" to
-        the file and save your edits with Ctrl+s
+    While the website is still up (no Ctrl+c !), open templates/about.html file 
+        Note: not contact/templates
+
+    Uncomment the html paragraph and add necessary info to the file and save your edits
+        Example: <p>
+                    I am orange and I like to play in fields
+                 </p>
     
     No need to rerun from the terminal or migrate-- just refresh your website
-    (If you quit the server just rerun django-admin runserver in the terminal to view changes)
+    (If you quit the server just rerun python manage.py runserver in the terminal to view changes)
 
-6. Create a new app to list bevo's friends by following steps 4-8
+
+CHALLENGE: Learn to create an entire app by making a new app to list bevo's friends with the instructions (steps 4-8) below
 
 START NEW PROJECT:
 1. Activate your virtual environment
@@ -93,7 +103,8 @@ START NEW PROJECT:
 
 3. View & edit settings
     - make your code os-independent by using import os & os.path()
-    https://docs.djangoproject.com/en/4.0/intro/reusable-apps/
+    Help with os:
+        https://docs.djangoproject.com/en/4.0/intro/reusable-apps/
 
 4. Create apps
     Terminal:
@@ -104,16 +115,21 @@ START NEW PROJECT:
     add your app name to INSTALLED_APPS in settings.py of the project directory
 
     create and edit models in models.py
+        
+    Help with models:
         https://docs.djangoproject.com/en/4.0/topics/db/models/
 
 5. Create views and get website ready
     create HTML files for your app's page
+    Help with HTML: 
         https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
     
     edit views in views.py to incorporate HTML
+    Help with views:
         https://data-flair.training/blogs/django-views/
 
     add the path to your url in urls.py
+    Help with urls:
         https://docs.djangoproject.com/en/4.0/topics/http/urls/
 
 6. Migrate
@@ -124,6 +140,15 @@ START NEW PROJECT:
 7. Run
     python manage.py runserver
 
-8. Edit & repeat steps 3-8!
+8. Edit & repeat steps 3-8 to build up your apps!
+
+DEBUGGING HELP:
+-- when in doubt migrate!!
+-- did you register your model in admin.py?
+-- did you add your model to the apps in settings.py?
+-- check the urls.py and views.py to make sure your models are imported and lead to the correct html file
+-- console and the webapp itself have very descriptive error messages
+-- stack overflow >>>
 
 Good luck!
+--web4.0
