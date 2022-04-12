@@ -29,5 +29,5 @@ class FriendForm(forms.ModelForm):
             'message',
             'email',
             'school',
-            # 'winner',
+            # 'best_school',
         ]
