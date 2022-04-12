@@ -2,53 +2,65 @@ Hello and welcome to web 4.0's Django tutorial!
 
 We hope that our material helps you become a great rapid web developer.
 
-DEPENDENCIES (virtual environment recommended):
-1. Ensure that you have Python 3
+MAKE A VIRTUAL ENVIRONMENT (it is recommended to develop in Django in a virtual environment):
+    Terminal:
+        python -m venv path/to/new/virtual/environment
+
+        To activate: source path/to/virtual/environment/bin/activate
+    Help:
+        https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
+
+DEPENDENCIES:
+1. Ensure that you have python or python3
     Download the latest version if necessary:
         https://www.python.org/downloads/
 
-2. Install Django (Windows, macOS, Linux, Solaris)
+2. Install Django (Windows, macOS, Linux, Solaris) in the virtual environment
     Using pip in the terminal:
         $ python -m pip install Django
     Help:
         https://docs.djangoproject.com/en/4.0/topics/install/
 
 
-MAKE A VIRTUAL ENVIRONMENT:
-    Terminal:
-        python -m venv path/to/new/virtual/environment
-    Help:
-        https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment
-
-
 START DEVELOPING!
 OUR TUTORIAL:
-1. Activate your virtual environment
+1. Enter desired location and clone project 
     Terminal:
-        source bin/activate
-    
-2. Add yourself as a superuser to view Bevo's admin page
+        git clone git@github.com:hh15248/web4.0-Django.git
+
+2. cd into the folder and run the project
     Terminal:
-        django-admin createsuperuser
+        cd web4.0-django/my_demo
+        python manage.py runserver
+        Note: your command may be python3 manage.py runserver
+
+        copy and paste the url from the output in your browser to view the webapp
+        http://127.0.0.1:8000/
+
+3. Add yourself as a superuser to view Bevo's admin page
+    Terminal:
+        (Ctrl+C to Quit)
+        python manage.py createsuperuser
 
     fill out respective fields (email not necessary)
 
     Run the demo in terminal and pull up website:
-        django-admin runserver
+        python manage.py runserver
     
-    Add "admin/" to the url and easily view the database info
+    Add "admin/" to the base url and login to easily view the database info
+    http://127.0.0.1:8000/admin/
 
-3. Add the best_school field to bevo's contact model and form
+4. Add the best_school field to bevo's contact model and form
     Uncomment lines in the contact direcotry in forms.py and models.py
 
     Change the database in the terminal:
-        django-admin makemigrations contact
-        django-admin migrate
+        python manage.py makemigrations contact
+        python manage.py migrate
     
     Rerun to view new changes in terminal:
-        django-admin runserver
+        python manage.py runserver
 
-4. Edit bevo's about page HTML file in templates
+5. Edit bevo's about page HTML file in templates
     While the website is still up (no Ctrl+C !), navigate to the about.html file
 
     Add necessary info like "I am orange and like to play in fields" to
@@ -57,16 +69,16 @@ OUR TUTORIAL:
     No need to rerun from the terminal or migrate-- just refresh your website
     (If you quit the server just rerun django-admin runserver in the terminal to view changes)
 
-5. Create a new app to list bevo's friends by following steps 4-8
+6. Create a new app to list bevo's friends by following steps 4-8
 
 START NEW PROJECT:
 1. Activate your virtual environment
     Terminal:
-        source bin/activate
+        source path/to/virtual/environment/bin/activate
 2. Create a project
     Terminal:
-        cd /filepath_to_desired_location/
-        django-admin startproject site_name
+        cd path/to/desired/location/
+        python manage.py startproject site_name
 
 3. View & edit settings
     - make your code os-independent by using import os & os.path()
@@ -74,7 +86,7 @@ START NEW PROJECT:
 
 4. Create apps
     Terminal:
-        django-admin startapp app_name
+        python manage.py startapp app_name
 
     register your model in admin.py
 
@@ -95,11 +107,11 @@ START NEW PROJECT:
 
 6. Migrate
     Terminal:
-        django-admin makemigrations app_name 
-        django-admin migrate
+        python manage.py makemigrations app_name 
+        python manage.py migrate
 
 7. Run
-    django-admin runserver
+    python manage.py runserver
 
 8. Edit & repeat steps 3-8!
 
